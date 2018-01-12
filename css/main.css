@@ -15,6 +15,10 @@ html {
     overflow: hidden;
 }
 
+.bannerimg {
+  display: none;
+}
+
 h1 {
   font-family: Roboto, sans-serif;
   color: #fff;
@@ -124,6 +128,16 @@ a:hover {
   overflow: hidden;
 }
 
+.opening-content {
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  color: #fff;
+
+  background-color: transparent;
+  background-image: linear-gradient(to bottom, rgba(185, 154, 161, 0), rgba(0, 0, 0, 100));
+}
+
 .banner-subhead {
   font-family: Roboto, sans-serif;
 }
@@ -151,7 +165,7 @@ a:hover {
 
 .btn {
   background-color: #000000;
-  border-color: #fff;
+  border-color: #BFBEBE;
   border-radius: 1rem;
   padding-right: 1rem;
   padding-top: .5rem;
@@ -257,6 +271,10 @@ a:hover {
 
     background-color: transparent;
     background-image: linear-gradient(to bottom, rgba(185, 154, 161, 0), rgba(0, 0, 0, 100));
+  }
+
+  .bannerimg {
+    display: block;
   }
 
   .contact-info {
