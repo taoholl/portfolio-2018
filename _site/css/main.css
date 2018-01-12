@@ -38,7 +38,10 @@ h3 {
 .logo {
   background-color: #000000;
 }
-
+.tao {
+  width: 20%;
+  height: 20%;
+}
 .img-flex {
   display: block;
   width: 100%;
