@@ -19,6 +19,10 @@ html {
   display: none;
 }
 
+.button {
+  padding-bottom: -0.4rem;
+}
+
 h1 {
   font-family: Roboto, sans-serif;
   color: #fff;

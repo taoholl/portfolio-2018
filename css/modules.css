@@ -1,7 +1,7 @@
 /*
  * Modulifier || Code released under the UNLICENSE
  * Code under other copyrights & licenses listed below.
- * https://modulifier.web-dev.tools/#responsive;images;list-group;embed;media-object;accessibility;print
+ * https://modulifier.web-dev.tools/#responsive;images;list-group;embed;media-object;icons;accessibility;print
  */
 
 @-moz-viewport { width: device-width; scale: 1; }
@@ -78,7 +78,8 @@ img {
   border: 0;
 }
 
-.img-flex {
+.img-flex,
+.img-flex img {
   display: block;
   width: 100%;
 }
@@ -229,6 +230,89 @@ svg.img-flex {
   min-width: 12em; /* Slightly less than 200px, responsiveness built in */
 }
 
+.icon {
+  display: inline-block;
+  position: relative;
+  background: transparent none no-repeat center center;
+  background-size: contain;
+  vertical-align: middle;
+}
+
+.i-16, .i--16 {
+  height: 16px;
+  width: 16px;
+}
+
+.i-18, .i--18 {
+  height: 18px;
+  width: 18px;
+}
+
+.i-20, .i--20 {
+  height: 20px;
+  width: 20px;
+}
+
+.i-24, .i--24 {
+  height: 24px;
+  width: 24px;
+}
+
+.i-32, .i--32 {
+  height: 32px;
+  width: 32px;
+}
+
+.i-48, .i--48 {
+  height: 48px;
+  width: 48px;
+}
+
+.i-64, .i--64 {
+  height: 64px;
+  width: 64px;
+}
+
+.i-96, .i--96 {
+  height: 96px;
+  width: 96px;
+}
+
+.i-128, .i--128 {
+  height: 128px;
+  width: 128px;
+}
+
+.i-192, .i--192 {
+  height: 192px;
+  width: 192px;
+}
+
+.i-256, .i--256 {
+  height: 256px;
+  width: 256px;
+}
+
+.icon img,
+.icon svg {
+  left: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  fill: currentColor;
+}
+
+.icon-label {
+  vertical-align: middle;
+}
+
+.icon-link,
+.icon-link:focus,
+.icon-link:hover {
+  text-decoration: none;
+}
+
 a:hover, a:active {
   outline: none;
 }
@@ -242,6 +326,7 @@ textarea:focus,
 button:focus,
 select:focus {
   outline: 3px solid #000;
+  outline-offset: 0;
 }
 
 a:focus, [tabindex="0"]:focus {
@@ -295,17 +380,106 @@ a:focus, [tabindex="0"]:focus {
   visibility: hidden;
 }
 
+.page-break-before {
+  page-break-before: always;
+}
+
+.page-break-after {
+  page-break-after: always;
+}
+
+.no-page-break-inside {
+  page-break-inside: avoid;
+}
+
 @media print {
 
+  /* stylelint-disable declaration-no-important */
+
   .no-print {
-    display: none;
-    visibility: hidden;
+    display: none !important;
+    visibility: hidden !important;
   }
 
-  .print-only {
-    display: block;
-    visibility: visible;
+  .print-only,
+  .force-print {
+    display: block !important;
+    visibility: visible !important;
   }
+
+  /* stylelint-enable */
+
+  .visually-hidden.force-print {
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    padding: 0;
+    position: static;
+    width: auto;
+    border: 0;
+    clip: initial;
+    clip-path: none;
+  }
+
+  /*
+   * (c) Fabien Sa || MIT License
+   *     http://bafs.github.io/Gutenberg/
+   */
+
+  table,
+  blockquote,
+  pre,
+  code,
+  figure,
+  li,
+  hr,
+  ul,
+  ol,
+  a,
+  tr {
+    page-break-inside: avoid;
+  }
+
+  h1, h2, h3, h4, h5, h6, p, a {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+
+  h1 + p,
+  h2 + p,
+  h3 + p,
+  h4 + p,
+  h5 + p,
+  h6 + p {
+    page-break-before: avoid;
+  }
+
+  img {
+    page-break-after: auto;
+    page-break-before: auto;
+    page-break-inside: avoid;
+  }
+
+  /* stylelint-disable declaration-no-important */
+
+  pre {
+    white-space: pre-wrap !important;
+    word-wrap: break-word;
+  }
+
+  /* stylelint-enable */
+
+  /* End Gutenberg code */
 
   /*
    * (c) HTML5 Boilerplate || MIT License
@@ -336,29 +510,14 @@ a:focus, [tabindex="0"]:focus {
   }
 
   a[href^="#"]::after,
-  a[href^="javascript:"]::after {
+  a[href^="javascript:"]::after,
+  a.no-print-href::after,
+  a.href-no-print::after {
     content: "";
-  }
-
-  pre, blockquote {
-    page-break-inside: avoid;
   }
 
   thead {
     display: table-header-group;
-  }
-
-  tr, img {
-    page-break-inside: avoid;
-  }
-
-  p, h1, h2, h3, h4, h5, h6 {
-    orphans: 3;
-    widows: 3;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    page-break-after: avoid;
   }
 
   /* End HTML5 Boilerplate code */
